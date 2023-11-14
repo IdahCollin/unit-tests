@@ -1,9 +1,13 @@
-export const isEmpty = (stringArrayOrObject) => {
-  const type = typeof stringArrayOrObject
+// Klar
 
-  if (type === 'string') {
-    return stringArrayOrObject === ''
+export const isEmpty = (stringArrayOrObject) => {
+  const type = typeof stringArrayOrObject;
+
+  if (type === 'string' || Array.isArray(stringArrayOrObject)) {
+    return stringArrayOrObject.length === 0;
+  } else if (type === 'object') {
+    return Object.keys(stringArrayOrObject).length === 0;
   }
 
-  return false
-}
+  return false;
+};

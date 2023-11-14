@@ -1,3 +1,6 @@
+// Klar
+
 export const filterNumbers = (array, largerThan) => {
-  return array
+  return array.filter(number => number <= largerThan);
 }
+
